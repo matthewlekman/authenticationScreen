@@ -1,67 +1,130 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Orbitron', sans-serif;
+  --primary: #00D1FF;
+  --accent: #4E4E50;
+  --background: #121212;
+  --text: #ffffff;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* Body background and text */
 body {
+  font-family: inherit;
   margin: 0;
   display: flex;
-  place-items: center;
+  justify-content: center;
+  align-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: var(--background);
+  color: var(--text); 
 }
 
+/* Headings */
 h1 {
+  font-family: inherit;
   font-size: 3.2em;
   line-height: 1.1;
+  color: var(--text);
+  text-align: center;
 }
 
+/* Buttons */
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: none;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--primary);
+  color: white;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background-color 0.25s ease;
+  align-items: center;
 }
 button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  background-color: var(--accent);
 }
 
+input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  outline: none;
+  background-color: #1f1f1f;
+  color: #00D1FF;
+  width: 250px;
+  transition: border-color 0.3s ease;
+}
+
+/* Links */
+a {
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--accent);
+}
+
+/* Optional card styling */
+.card {
+  background-color: var(--card-bg);
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  backdrop-filter: blur(8px);
+}
+
+.glass-box {
+  width: 500px;           /* Fixed width */
+  height: 800px;           /* Let it grow with content */
+  padding: 2rem;          /* Adjust spacing inside */
+  
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 2rem 0;
+}
+
+.divider {
+  width: 80%; /* Adjust as needed */
+  height: 2px;
+  background-color: var(--accent); /* Or a custom color */
+  border: none;
+  margin: 2rem auto;
+}
+
+.forgot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -10px;
+}
+
+
+/* Accessibility preference for motion */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
