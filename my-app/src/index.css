@@ -1,61 +1,58 @@
 :root {
-  font-family: 'Orbitron', sans-serif;
-  --primary: #00D1FF;
-  --accent: #4E4E50;
-  --background: #121212;
-  --text: #ffffff;
+  --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --primary: #0078D4; /* Fluent blue */
+  --primary-hover: #005A9E;
+  --background: #f3f2f1;
+  --surface: #ffffff;
+  --text: #323130;
+  --border: #edebe9;
+  --shadow: rgba(0, 0, 0, 0.1);
 }
 
 /* Body background and text */
 body {
-  font-family: inherit;
+  font-family: var(--font);
   margin: 0;
+  background-color: var(--background);
+  color: var(--text);
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 320px;
   min-height: 100vh;
-  background: var(--background);
-  color: var(--text); 
 }
 
 /* Headings */
 h1 {
-  font-family: inherit;
-  font-size: 3.2em;
-  line-height: 1.1;
-  color: var(--text);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
   text-align: center;
-}
-
-/* Buttons */
-button {
-  border-radius: 8px;
-  border: none;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: var(--primary);
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.25s ease;
-  align-items: center;
-}
-button:hover {
-  background-color: var(--accent);
+  color: var(--text);
 }
 
 input {
+  width: 100%;
   padding: 0.5rem;
   font-size: 1rem;
-  border: 2px solid var(--primary);
-  border-radius: 8px;
-  outline: none;
-  background-color: #1f1f1f;
-  color: #00D1FF;
-  width: 250px;
-  transition: border-color 0.3s ease;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.6em 1.2em;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
 }
 
 /* Links */
@@ -78,16 +75,12 @@ a:hover {
 }
 
 .glass-box {
-  width: 500px;           /* Fixed width */
-  height: 800px;           /* Let it grow with content */
-  padding: 2rem;          /* Adjust spacing inside */
-  
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 480px;
+  padding: 2rem;
+  background-color: var(--surface);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 8px var(--shadow);
 }
 
 .center {
@@ -100,8 +93,8 @@ a:hover {
 
 .divider {
   width: 80%; /* Adjust as needed */
-  height: 2px;
-  background-color: var(--accent); /* Or a custom color */
+  height: 1px;
+  background-color: var(--primary); /* Or a custom color */
   border: none;
   margin: 2rem auto;
 }
