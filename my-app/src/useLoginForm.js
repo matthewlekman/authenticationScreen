@@ -6,6 +6,7 @@ function useLoginForm() {
     const [password, setPassword] = useState('');
     const [submit, setSubmit] = useState(false);
     const [isUser, setIsUser] = useState(true);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleUsername = (e) => {
         setUsername(e.target.value);
@@ -21,8 +22,11 @@ function useLoginForm() {
             setUsername(username);
             setPassword(password);
             setSubmit(true);
+            setIsUser(true);
         } else {
             setIsUser(false);
+            setSubmit(false);
+            setErrorMessage('username or password is incorrect - please try again.');
         }
     }
 
@@ -31,6 +35,7 @@ function useLoginForm() {
         password,
         submit,
         isUser,
+        errorMessage,
         handleUsername,
         handlePassword,
         handleSubmit,

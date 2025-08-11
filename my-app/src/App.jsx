@@ -12,7 +12,7 @@ function App() {
         <hr className="divider"/>
       </div>
       <div className="forgot">
-        <button>forgot password?</button>
+        <button>Forgot password?</button>
       </div>
     </div>
     </>

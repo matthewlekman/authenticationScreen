@@ -36,7 +36,8 @@ function Password({ password, handlePassword }) {
             <label>details: {username}, {password}</label>
         </div>
     )
-}*/
+}
+*/
 
 function LoginForm() {
 
@@ -48,6 +49,7 @@ function LoginForm() {
     handleSubmit,
     isUser,
     submit,
+    errorMessage
   } = useLoginForm();
 
     return (
@@ -56,8 +58,10 @@ function LoginForm() {
         <Username username={username} handleUsername={handleUsername} />
         <Password password={password} handlePassword={handlePassword} />
         <div className="center">
-            <button>submit</button>
+            <button type="submit">Go!</button>
         </div>
+        {!isUser && <p className="error">{errorMessage}</p>}
+        {submit && isUser && <p className="success">Welcome, {username}!</p>}
     </form>
     );
 }
